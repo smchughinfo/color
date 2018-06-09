@@ -1,1 +1,1 @@
-Colors
+![example use](https://github.com/smchughinfo/color/blob/master/color.png)
