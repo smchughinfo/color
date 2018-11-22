@@ -17,3 +17,13 @@ C:\Users\Sean\Desktop\Color\Color\obj\x86\Debug\Color.csproj.GenerateResource.ca
 C:\Users\Sean\Desktop\Color\Color\obj\x86\Debug\Color.csproj.CoreCompileInputs.cache
 C:\Users\Sean\Desktop\Color\Color\obj\x86\Debug\Color.exe
 C:\Users\Sean\Desktop\Color\Color\obj\x86\Debug\Color.pdb
+C:\color\Color\bin\Debug\Color.exe.config
+C:\color\Color\bin\Debug\Color.exe
+C:\color\Color\bin\Debug\Color.pdb
+C:\color\Color\obj\x86\Debug\Color.csprojAssemblyReference.cache
+C:\color\Color\obj\x86\Debug\Color.Form1.resources
+C:\color\Color\obj\x86\Debug\Color.Properties.Resources.resources
+C:\color\Color\obj\x86\Debug\Color.csproj.GenerateResource.cache
+C:\color\Color\obj\x86\Debug\Color.csproj.CoreCompileInputs.cache
+C:\color\Color\obj\x86\Debug\Color.exe
+C:\color\Color\obj\x86\Debug\Color.pdb

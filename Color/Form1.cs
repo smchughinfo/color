@@ -50,6 +50,28 @@ namespace Color
          {
             x = Cursor.Position.X;
             y = Cursor.Position.Y;
+
+                // BEGIN COORDINATE CORRECTION CODE
+                // still haven't taken the time to figure this out.
+                // it calculates the position different on different computers (different screens)
+                // the problem is the value that gets sent to  Win32.GetPixelColor. it wants them in "logical units" https://docs.microsoft.com/en-us/windows/desktop/api/wingdi/nf-wingdi-getpixel
+                // apparently you can get that with dptolp but the code is gibirish to me (and i think wrong) https://www.pinvoke.net/default.aspx/gdi32/DPtoLP.html
+                // the magic google was "c# convert to logical units" https://stackoverflow.com/questions/30424985/how-to-convert-a-wpf-inch-unit-to-winforms-pixels-and-vice-versa
+                // additional reading https://stackoverflow.com/questions/422296/how-do-i-determine-the-true-pixel-size-of-my-monitor-in-net
+                // why the * 2? well that is a GREAT question. i saw a ^2 somewhere so maybe thats it.
+                this.Invoke(new Action(() =>
+            {
+                PointF dpi = PointF.Empty;
+                using (Graphics g = this.CreateGraphics())
+                {
+                    dpi.X = g.DpiX;
+                    dpi.Y = g.DpiY;
+                    x = Convert.ToInt32(x * 72/ dpi.X) * 2;
+                    y = Convert.ToInt32(y * 72 / dpi.Y) * 2;
+                }
+            }));
+            // END COORDINATE CORRECTION CODE
+
             color = Win32.GetPixelColor(x, y);
             panColor.BackColor = color;
             panNamedColor.BackColor = namedColorRGB;
